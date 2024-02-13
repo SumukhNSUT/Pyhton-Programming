@@ -1,0 +1,32 @@
+class Employee:
+    company = "Google"  # class attribute
+    salary = 30000  # class attribute
+# class attributes are common for all members of class
+# when we write rahul = Employee() , then it gets all properties in class atrributes
+
+
+harry = Employee()
+rajni = Employee()
+
+print(harry.company)
+print(rajni.company)
+
+# Modifying class variable using class name
+Employee.company = "YouTube"
+
+print(harry.company)
+print(rajni.company)
+print(harry.salary)
+print(rajni.salary)
+
+Employee.salary = 50000  # here rajni and harry both 50,000
+print(harry.salary)
+rajni.salary = 60000  # here rajni updated , harry at 50,000
+# this is an instance attribute
+print(rajni.salary)
+
+sumukh = Employee()
+print(sumukh.salary)
+# salary was updated for all employees
+# new salary for all employees is 50,000
+print(sumukh.company)  # company of all employees were made youtube
