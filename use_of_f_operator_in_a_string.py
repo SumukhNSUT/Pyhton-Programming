@@ -6,3 +6,5 @@ print("My name is "+str(name) + " and I am "+str(age) + " years old.")
 # as it is more readable
 # f stands for string formatter
 # it is operator for formatting strings to make more readable
+
+# it is named as f string
