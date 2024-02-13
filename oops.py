@@ -3,10 +3,15 @@ class Employee:
     salary = 30000  # class attribute
 # class attributes are common for all members of class
 # when we write rahul = Employee() , then it gets all properties in class atrributes
+# stuff referring to single employee is instantaneous attributes
 
 
 harry = Employee()
 rajni = Employee()
+
+rajni.adress = "Adress 1"  # this is instantaneous attribute
+# referring only rajni
+# nothing to do with other employees
 
 print(harry.company)
 print(rajni.company)
