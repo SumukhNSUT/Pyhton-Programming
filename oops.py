@@ -5,6 +5,9 @@ class Employee:
 # when we write rahul = Employee() , then it gets all properties in class atrributes
 # stuff referring to single employee is instantaneous attributes
 
+# In object-oriented programming (OOP), a class is a blueprint for creating objects (instances)
+# It defines the properties (attributes) and behaviors (methods) that all objects of that type will have
+
 
 harry = Employee()
 rajni = Employee()
