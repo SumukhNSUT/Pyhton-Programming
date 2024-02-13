@@ -7,3 +7,4 @@ class Employee:
 
 harry = Employee()
 harry.getSalary()
+# same as Employee.getSalary(harry)
