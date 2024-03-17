@@ -1,30 +1,20 @@
-class MarksOutOfRange(Exception):
-    pass
+def count_words(file_path):
+    try:
+        with open(file_path, 'r') as file:
+            content = file.read()
+            word_count = len(content.split())
+            return word_count
+    except FileNotFoundError:
+        print("File not found.")
+        return -1
 
 
-def calculate_percentage(subjects):
-    max_marks = 100  # Assuming maximum marks for each subject is 100
-    marks = []
-    for subject, score in subjects.items():
-        if score > max_marks:
-            raise MarksOutOfRange(f"Marks for {subject} are out of range.")
-        marks.append(score)
-    total_marks = sum(marks)
-    percentage = (total_marks / (len(subjects) * max_marks)) * 100
-    return percentage
+def main():
+    file_path = input("Enter the file path: ")
+    word_count = count_words(file_path)
+    if word_count != -1:
+        print(f"Number of words in the file: {word_count}")
 
 
-try:
-    subject_marks = {}
-    for i in range(3):
-        subject = input(f"Enter subject {i + 1}: ")
-        marks = int(input(f"Enter marks for {subject}: "))
-        subject_marks[subject] = marks
-
-    percentage = calculate_percentage(subject_marks)
-    print("Percentage:", percentage)
-
-except ValueError:
-    print("Invalid input! Please enter marks as integers.")
-except MarksOutOfRange as e:
-    print(e)
+if __name__ == "__main__":
+    main()
