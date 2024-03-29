@@ -1,20 +1,28 @@
-def count_words(file_path):
-    try:
-        with open(file_path, 'r') as file:
-            content = file.read()
-            word_count = len(content.split())
-            return word_count
-    except FileNotFoundError:
-        print("File not found.")
-        return -1
+from flask import Flask, request
+
+app = Flask(__name__)
+
+# Route for the homepage
 
 
-def main():
-    file_path = input("Enter the file path: ")
-    word_count = count_words(file_path)
-    if word_count != -1:
-        print(f"Number of words in the file: {word_count}")
+@app.route('/')
+def index():
+    return 'Welcome to the homepage!'
+
+# Route for handling GET requests
 
 
-if __name__ == "__main__":
-    main()
+@app.route('/get', methods=['GET'])
+def handle_get():
+    return 'GET request received.'
+
+# Route for handling POST requests
+
+
+@app.route('/post', methods=['POST'])
+def handle_post():
+    return 'POST request received.'
+
+
+if __name__ == '__main__':
+    app.run(debug=True)
