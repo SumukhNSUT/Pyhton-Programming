@@ -1,5 +1,5 @@
 # my first webpage
-from flask import Flask
+from demo import Flask
 
 app = Flask(__name__)
 
